@@ -1,3 +1,4 @@
+#include <iostream>
 /*
  Project 4 - Part 1 / 9
  video: Chapter 2 Part 7
@@ -50,10 +51,117 @@
  Wait for my code review.
  */
 
-#include <iostream>
+ struct FloatType
+ {
+    float add( float lhs, float rhs );
+    float subtract( float lhs, float rhs );
+    float multiply( float lhs, float rhs );
+    float divide( float lhs, float rhs );
+ };
+
+float FloatType::add( float lhs=0.0, float rhs=0.0 )
+{
+    return(lhs + rhs);
+}
+
+float FloatType::subtract( float lhs=0.0, float rhs=0.0 )
+{
+    return(lhs - rhs);
+}
+
+float FloatType::multiply( float lhs=0.0, float rhs=0.0 )
+{
+    return(lhs * rhs);
+}
+
+float FloatType::divide( float lhs=0.0, float rhs=1.0 )
+{
+        if (rhs == 0)
+    {
+        std::cout << "Division over Zero - " << std::endl;
+    }
+    return(lhs / rhs);
+}
+
+ struct DoubleType
+ {
+
+    double add( double lhs, double rhs );
+    double subtract( double lhs, double rhs );
+    double multiply( double lhs, double rhs );
+    double divide( double lhs, double rhs );
+ };
+
+  double DoubleType::add( double lhs=0.0, double rhs=0.0 )
+ {
+    return(lhs + rhs);
+ }
+
+  double DoubleType::subtract( double lhs=0.0, double rhs=0.0 )
+ {
+    return(lhs - rhs);
+ }
+ 
+   double DoubleType::multiply( double lhs=0.0, double rhs=0.0 )
+ {
+    return(lhs * rhs);
+ }
+
+   double DoubleType::divide( double lhs=0.0, double rhs=1.0 )
+ {
+     if (rhs == 0.0)
+     {
+        std::cout << "Division over Zero - " << std::endl;
+     }
+
+return(lhs / rhs);
+
+ }
+
+ struct IntType
+ {
+    int add( int lhs, int rhs );
+    int subtract( int lhs, int rhs );
+    int multiply( int lhs, int rhs );
+    int divide( int lhs, int rhs );
+ };
+
+  int IntType::add( int lhs=0, int rhs=0)
+ {
+    return(lhs + rhs);
+ }
+
+  int IntType::subtract( int lhs=0, int rhs=0)
+ {
+    return(lhs - rhs);
+ }
+
+   int IntType::multiply( int lhs=0, int rhs=0)
+ {
+    return(lhs * rhs);
+ }
+
+   int IntType::divide( int lhs=0, int rhs=1)
+ {
+     if (rhs != 0)
+     {
+        return(lhs / rhs);
+     }
+     else
+     {
+        std::cout << "Error, invalid division over zero - " << std::endl;
+        return(lhs);
+     }
+
+ }
+
+
+
 int main() 
 {
     FloatType ft;
+    // std::cout << "ERNESTO: " << ft.subtract( 123, 432) << std::endl;
+
     std::cout << "result of ft.add(): " << ft.add( 123.456f, 432.1f) << std::endl;
     std::cout << "result of ft.subtract(): " << ft.subtract( 123.456f, 432.1f) << std::endl;
     std::cout << "result of ft.multiply(): " << ft.multiply( 123.456f, 432.1f) << std::endl;
